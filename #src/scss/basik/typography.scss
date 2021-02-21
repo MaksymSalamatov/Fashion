@@ -1,0 +1,31 @@
+@import 'media-grid';
+@import 'mixins';
+
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @include fonts(15px, 22px, 400);
+  color: $black;
+}
+
+input {
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.page-content {
+  flex: 1 0 auto;
+}

@@ -1,0 +1,28 @@
+@import "mixins";
+@import "variables";
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: $black;
+}
+
+h1{
+  @include fonts(80px, 120px, 700);
+}
+
+h2{
+  @include fonts(28px, 42px, 700);
+}
+
+h3{
+  @include fonts(25px, 37px, 700);
+}
+
+h4{
+  @include fonts(20px, 30px, 700);
+}
+h5{
+  @include fonts(18px, 27px, 500);
+}
+
+

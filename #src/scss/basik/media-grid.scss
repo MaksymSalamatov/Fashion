@@ -1,0 +1,36 @@
+@import './variables';
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 1160px;
+
+  @media (max-width: $xxl-min) {
+    max-width: 1200px;
+  }
+
+  @media (max-width: $xl-min) {
+    max-width: 1200px;
+  }
+
+  @media (max-width: $lg-min) {
+    max-width: 1140px;
+  }
+
+  @media (max-width: $md-mid) {
+    max-width: 960px;
+  }
+
+  @media (max-width: $md-min) {
+    max-width: 799px;
+  }
+
+  @media (max-width: $sm-min) {
+    max-width: 570px;
+  }
+
+  @media (max-width: $ss-min) {
+    max-width: 400px;
+  }
+}
