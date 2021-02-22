@@ -1,4 +1,336 @@
 @import '../basik/variables';
 @import '../basik/mixins';
 @import '../basik/media-grid';
+@import '../customize/useful-classes';
 
+.header{
+  &__wrap{
+    @include flex(center, space-between);
+    padding: 20px 0;
+    height: 100%;
+  }
+  &-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    transition: opacity .5s, visibility .5s;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__logo{
+    @media (max-width: $sm-min) {
+      order: 2;
+      margin-right: 15px;
+    }
+  }
+  &__menu{
+
+    .nav {
+      .ul{
+        @include flex(center, space-between);
+        width: 527px;
+
+        @media (max-width: $sm-min) {
+          flex-direction: column;
+        }
+
+        .nav__links-1,
+        .nav__links-2,
+        .nav__links-3,
+        .nav__links-4,
+        .nav__links-5,
+        .nav__links-6{
+          position: relative;
+          &:hover ul{
+            display: block;
+          }
+          ul{
+            position: absolute;
+            width: 150px;
+            text-align: center;
+            display: none;
+
+            @media (max-width: $sm-min) {
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 1;
+            }
+
+            & li{
+              background: #807a7a;
+              padding: 10px 0;
+              transition: all .4s ease;
+              &:hover{
+                background: $black;
+                color: $back;
+                transition: all .4s ease;
+              }
+
+              & a{
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      &__links{
+        h5{
+          &:hover{
+            transform: scale(1.2);
+          }
+        }
+
+        @media (max-width: $sm-min) {
+          margin-bottom: 10px;
+        }
+      }
+
+      @include flex(center, space-between);
+      margin: 0 auto;
+
+      .ref {
+        margin-right: 66px;
+        @media (max-width: $md-mid) {
+          margin: 0 auto;
+        }
+      }
+
+      a {
+        @include fonts(14px, 24px, 600);
+      }
+
+      @media (max-width: $md-mid) {
+        width: 100%;
+        position: absolute;
+        flex-direction: column;
+        @include flex(center, center);
+        @include fonts(50px, 50px, 500);
+        left: 0;
+        top: 0;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition: all .5s ease;
+        height: 30vh;
+        padding: 15px;
+      }
+
+      .middle {
+        @media (max-width: $md-mid) {
+          margin-bottom: 30px;
+        }
+      }
+
+      &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0%);
+        z-index: 50;
+      }
+    }
+
+    .burger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 20px;
+
+      @media (max-width: $sm-min) {
+        top: -5%;
+        left: 20px;
+      }
+
+      &-item {
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        left: 0;
+        background-color: #000;
+        transition: all .3s ease;
+
+        &:nth-child(2) {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &:nth-child(3) {
+          bottom: 0;
+        }
+      }
+
+      @media (max-width: $md-mid) {
+        display: block;
+        margin-top: 65px;
+      }
+
+
+      &.show {
+        z-index: 100;
+
+        .burger-item {
+          &:nth-child(1) {
+            transform: rotate(45deg);
+            transform-origin: left;
+            width: 50px;
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            width: 50px;
+            transform: rotate(-45deg);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+    .nav{
+
+    }
+  }
+  &__action{
+    img{
+      margin-left: 20px;
+      transition: all .5s ease;
+
+      @media (max-width: $sm-min) {
+        margin-left: 50px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &:hover{
+        transform: scale(1.3) rotate(360deg);
+        transition: all .5s ease;
+
+      }
+    }
+    .heart{
+      @media (max-width: $sm-min) {
+       padding: 10px 0;
+      }
+    }
+  }
+
+  .popap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all .8s ease;
+
+    &:target{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:target .popap__content{
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+
+    @media (max-width: $md-min) {
+      z-index: 999;
+    }
+
+    &__area{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    &__body{
+      min-height: 100%;
+      @include flex(center, center);
+      padding: 30px 10px;
+    }
+
+    &__content{
+      background: $white;
+      @include fonts(18px, 27px, 400);
+      color: $black;
+      max-width: 800px;
+      padding: 30px;
+      position: relative;
+      transition: all .8s ease;
+      opacity: 0;
+      transform: translate(0px, -100%);
+      border-radius: 21px;
+
+      @media (max-width: $sm-min) {
+        max-width: 300px;
+      }
+    }
+
+    &__close{
+      position: absolute;
+      font-size: 20px;
+      color: $black;
+      top: 25px;
+      right: 25px;
+    }
+
+    &__title{
+      @include fonts(18px, 21px, 400);
+      margin-bottom: 80px ;
+    }
+
+    &__text{
+      @media (max-width: $sm-min) {
+        max-width: 250px;
+        margin: 0 auto 61px;
+      }
+    }
+    input{
+      border: 1px solid #A7A7A7;
+      padding-left: 11px;
+      margin: 70px auto;
+
+      @media (max-width: $sm-min) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    &__buttons{
+      @include flex(center, center);
+      a{
+        border: 1px solid #000000;
+        border-radius: 10px;
+        margin: 0 3px;
+
+        @media (max-width: $sm-min) {
+          max-width: 120px;
+          font-size: 16px;
+        }
+      }
+    }
+
+  }
+}

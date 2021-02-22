@@ -90,7 +90,7 @@
 }
 
 .input{
-  background: #FFFFFF;
+  background: $back;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.07);
   border-radius: 5px;
   @include fonts(19px, 24px, 400);

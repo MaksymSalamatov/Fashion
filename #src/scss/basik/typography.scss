@@ -10,6 +10,7 @@ body {
   font-family: 'Poppins', sans-serif;
   @include fonts(15px, 22px, 400);
   color: $black;
+  background: $back;
 }
 
 input {
