@@ -29,9 +29,9 @@
     }
   }
   &__logo{
-    @media (max-width: $sm-min) {
-      order: 2;
-      margin-right: 15px;
+    @media (max-width: $md-mid) {
+      order: 1;
+      margin-left: 60px;
     }
   }
   &__menu{
@@ -45,15 +45,11 @@
           flex-direction: column;
         }
 
-        .nav__links-1,
-        .nav__links-2,
-        .nav__links-3,
-        .nav__links-4,
-        .nav__links-5,
-        .nav__links-6{
+        .nav__links-acive{
           position: relative;
           &:hover ul{
             display: block;
+            transition: all .4s ease;
           }
           ul{
             position: absolute;
@@ -68,7 +64,7 @@
             }
 
             & li{
-              background: #807a7a;
+              background: $links;
               padding: 10px 0;
               transition: all .4s ease;
               &:hover{
@@ -87,8 +83,11 @@
 
       &__links{
         h5{
+          transition: all .4s ease;
           &:hover{
-            transform: scale(1.2);
+            transform: scale(1.1);
+            color: $links;
+            transition: all .4s ease;
           }
         }
 
@@ -119,7 +118,7 @@
         @include fonts(50px, 50px, 500);
         left: 0;
         top: 0;
-        background-color: #fff;
+        background-color: $footer;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-100%);
@@ -152,21 +151,16 @@
       height: 40px;
       position: absolute;
       top: -40px;
-      left: 50%;
+      left: 40px;
       transform: translateX(-50%);
       margin: 20px;
-
-      @media (max-width: $sm-min) {
-        top: -5%;
-        left: 20px;
-      }
 
       &-item {
         position: absolute;
         width: 40px;
         height: 4px;
         left: 0;
-        background-color: #000;
+        background-color: $black;
         transition: all .3s ease;
 
         &:nth-child(2) {
@@ -207,11 +201,15 @@
         }
       }
     }
-    .nav{
 
-    }
   }
   &__action{
+    @media (max-width: $md-mid) {
+      order: 2;
+    }
+    @media (max-width: $sm-min) {
+      display: none;
+    }
     img{
       margin-left: 20px;
       transition: all .5s ease;
@@ -313,7 +311,7 @@
       }
     }
     input{
-      border: 1px solid #A7A7A7;
+      border: 1px solid $footer;
       padding-left: 11px;
       margin: 30px auto;
 
@@ -325,7 +323,7 @@
     &__buttons{
       @include flex(center, center);
       a{
-        border: 1px solid #000000;
+        border: 1px solid $black;
         border-radius: 10px;
         margin: 0 3px;
 
