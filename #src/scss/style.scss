@@ -4,9 +4,188 @@
 
 //first-screen
 
-.first-screen{
+.first__screen{
   background: url("../img/first-screen/first-screen.png") no-repeat top center;
   background-size: cover;
   width: 100%;
   height: 90vh;
+  @include flex(flex-end);
+  padding-bottom: 100px;
+
+  &_text{
+    margin-left: auto;
+    max-width: 450px;
+    h1{
+      margin: -18px 0;
+
+      @media (max-width: $sm-min) {
+        @include fonts(50px, 80px, 700);
+      }
+    }
+    @media (max-width: $sm-min) {
+      max-width: 100%;
+    }
+  }
+
+  &_buttons{
+    margin-top: 27px;
+    @include flex(center, flex-start);
+
+    @media (max-width: $sm-min) {
+      flex-direction: column;
+      @include flex(flex-start);
+    }
+
+    @media (max-width: $sm-min) {
+      margin-top: 10px;
+    }
+    a{
+      margin-right: 34px;
+      max-width: 147px;
+
+      @media (max-width: $md-mid) {
+        margin-left: 0;
+      }
+      @media (max-width: $sm-min) {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+.catagory{
+
+  padding: 123px 0 80px;
+  @media (max-width: $lg-min) {
+    padding: 20px;
+  }
+  &__wrap{
+    @include  flex(flex-start, space-around);
+    @media (max-width: $lg-min) {
+      flex-direction: column;
+      @include  flex(center);
+    }
+    @media (max-width: $sm-min) {
+    width: 90%;
+  }
+    &_girls{
+      @include flex(flex-end, space-between);
+      margin-top: 7px;
+      @media (max-width: $lg-min) {
+        margin: 20px 0;
+      }
+    }
+
+    &_block2{
+      position: relative;
+      margin-left: 10px;
+      @media (max-width: $lg-min) {
+        margin-right: 8px;
+      }
+      a{
+        position: absolute;
+        bottom: 25px;
+        left: 28px;
+        background: $white;
+        color: $black;
+        transition: all .4s ease;
+        &:hover{
+          background: $black;
+          color: $white;
+          transition: all .4s ease;
+        }
+      }
+    }
+  }
+}
+
+
+.womens, .mens{
+  padding: 15px 0;
+  @media (max-width: $lg-min) {
+    padding: 50px 0;
+  }
+  h4,h5{
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  &__wrap{
+    @include flex(center, space-between);
+    flex-wrap: wrap;
+    padding: 30px 0 50px;
+
+    @media (max-width: $lg-min) {
+      padding: 30px 0;
+    }
+
+    @media (max-width: $lg-min) {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    @media (max-width: $md-mid) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+  }
+  &__reverse{
+    .womens__item-img{
+      @media (max-width: $md-mid) {
+        order: 2;
+        margin: 0;
+        margin-bottom: 15px;
+      }
+    }
+    .womens__text{
+      margin-right: 20px;
+    }
+  }
+  &__item{
+    @media (max-width: $md-mid) {
+      @include  flex(center, space-between);
+    }
+    &-img{
+      display: inline-block;
+      overflow: hidden;
+      margin-bottom: 38px;
+      @media (max-width: $lg-min) {
+        margin-bottom: 15px;
+      }
+      @media (max-width: $md-mid) {
+        margin-right: 20px;
+      }
+      img{
+        transition: all 4s ease;
+
+        &:hover{
+          transform: scale(1.2);
+          transition: all 4s ease;
+        }
+
+        p{
+          margin-bottom: 3px;
+          &:nth-child(1){
+            font-weight: 300;
+          }
+        }
+      }
+    }
+
+
+    &-price{
+      :nth-child(1){
+        text-decoration: line-through;
+        margin-right: 30px;
+      }
+      :nth-child(2){
+        color: $red;
+      }
+
+
+      @media (max-width: $lg-min) {
+        margin-bottom: 40px;
+      }
+    }
+  }
 }
