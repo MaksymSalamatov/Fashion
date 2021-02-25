@@ -583,6 +583,38 @@ strong {
   font-weight: 600;
 }
 
+.reference {
+  color: #22262A;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.reference::before,
+.reference::after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 0;
+  background-color: #22262A;
+  -webkit-transition: width .5s ease-in-out, left .5s ease-in-out;
+  -o-transition: width .5s ease-in-out, left .5s ease-in-out;
+  transition: width .5s ease-in-out, left .5s ease-in-out;
+  left: 50%;
+  bottom: 0;
+  margin-top: 16px;
+}
+
+.reference:hover::before {
+  width: 50%;
+  left: 0;
+}
+
+.reference:hover::after {
+  width: 50%;
+}
+
 @-webkit-keyframes burgerOneShow {
   0% {
     top: 10px;
@@ -1196,6 +1228,38 @@ strong {
   font-weight: 600;
 }
 
+.reference {
+  color: #22262A;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.reference::before,
+.reference::after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 0;
+  background-color: #22262A;
+  -webkit-transition: width .5s ease-in-out, left .5s ease-in-out;
+  -o-transition: width .5s ease-in-out, left .5s ease-in-out;
+  transition: width .5s ease-in-out, left .5s ease-in-out;
+  left: 50%;
+  bottom: 0;
+  margin-top: 16px;
+}
+
+.reference:hover::before {
+  width: 50%;
+  left: 0;
+}
+
+.reference:hover::after {
+  width: 50%;
+}
+
 .header {
   background: #E5E5E5;
 }
@@ -1695,6 +1759,59 @@ strong {
 .womens__item-price :nth-child(2),
 .mens__item-price :nth-child(2) {
   color: #FF0000FF;
+}
+
+.avone__styles {
+  padding-bottom: 121px;
+}
+
+.avone__styles h4,
+.avone__styles h5 {
+  text-align: center;
+}
+
+.avone__styles h4 {
+  margin-bottom: 15px;
+}
+
+.avone__styles h5 {
+  margin-bottom: 60px;
+}
+
+.avone__styles_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.avone__styles_block-1 img {
+  margin-top: 80px;
+  margin-right: 30px;
+}
+
+.avone__styles_block-2 {
+  position: relative;
+}
+
+.avone__styles_block-2-small {
+  position: absolute;
+  bottom: -240px;
+  left: 300px;
+  border: 25px solid #E5E5E5;
+}
+
+.avone__styles_block-2 a {
+  bottom: -174px;
+  left: 100px;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
 }
 
 @media (max-width: 1920px) {

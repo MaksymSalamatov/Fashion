@@ -189,3 +189,44 @@
     }
   }
 }
+
+
+.avone__styles{
+  padding-bottom: 121px;
+  h4, h5{
+    text-align: center;
+  }
+  h4{
+    margin-bottom: 15px;
+  }
+  h5{
+    margin-bottom: 60px;
+  }
+  &_wrap{
+    @include flex(flex-start, flex-start);
+  }
+  &_block-1{
+    img{
+      margin-top: 80px;
+      margin-right: 30px;
+    }
+  }
+  &_block-2{
+    position: relative;
+    &-small{
+      position: absolute;
+      bottom: -240px;
+      left: 300px;
+      border: 25px solid $back;
+    }
+    a{
+      bottom: -174px;
+      left: 100px;
+
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+
+    }
+  }
+}
