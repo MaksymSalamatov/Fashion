@@ -12,6 +12,10 @@
   @include flex(flex-end);
   padding-bottom: 100px;
 
+  @media (max-width: $md-min) {
+    padding-bottom: 60px;
+  }
+
   &_text{
     margin-left: auto;
     max-width: 450px;
@@ -47,7 +51,7 @@
         margin-left: 0;
       }
       @media (max-width: $sm-min) {
-        margin-bottom: 0px;
+        margin-bottom: 10px;
       }
     }
   }
@@ -58,7 +62,7 @@
 .catagory{
   padding: 123px 0 40px;
   @media (max-width: $lg-min) {
-    padding: 60px 0 0;
+    padding: 60px 0 40px;
   }
   @media (max-width: $sm-min) {
     padding: 20px 0;
@@ -121,7 +125,7 @@
 .womens, .mens{
   padding: 40px 0 0;
   @media (max-width: $lg-min) {
-    padding: 60px 0 0;
+    padding: 20px 0 0;
   }
   h4,h5{
     text-align: center;
@@ -224,7 +228,7 @@
 //avone__styles
 
 .avone__styles{
-  padding: 80px 0 121px;
+  padding: 80px 0;
   @media (max-width: $md-min) {
     padding: 40px 0 185px;
   }

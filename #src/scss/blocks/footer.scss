@@ -1,3 +1,140 @@
 @import '../basik/variables';
 @import '../basik/mixins';
 @import '../basik/media-grid';
+
+
+.footer{
+  background: $footer-main;
+  padding: 115px 0 0;
+  @media (max-width: $md-min) {
+    padding: 40px 0 0;
+  }
+  &__wrap{
+    @include flex(flex-start, flex-start);
+    @media (max-width: $md-mid) {
+      @include flex(flex-start, space-between);
+    }
+    @media (max-width: $md-min) {
+      flex-direction: column;
+      @include flex(center);
+    }
+  }
+  &__feedback{
+    margin-right: 196px;
+    @media (max-width: $lg-min) {
+      margin-right: 100px;
+    }
+    @media (max-width: $md-mid) {
+      margin-right: 30px;
+    }
+    @media (max-width: $md-min) {
+      margin-right: 0;
+    }
+    p{
+      max-width: 406px;
+      margin: 17px 0 41px;
+    }
+    &_adress{
+      max-width: 240px;
+      &-location{
+        @include flex(center, space-between);
+        margin-bottom: 16px;
+      }
+      a{
+        margin-bottom: 7px;
+      }
+      &-social{
+        margin-top: 10px;
+        :not(:last-child){
+          margin-right: 12px;
+        }
+        img{
+          transition: all .3s ease;
+          &:hover{
+            transform: scale(1.2);
+            transition: all .3s ease;
+          }
+        }
+      }
+    }
+  }
+
+
+  &__info{
+    @media (max-width: $md-min) {
+      padding-top: 40px;
+    }
+    h3{
+      margin-bottom: 24px;
+    }
+    &_input{
+      position: relative;
+      margin-bottom: 70px;
+
+      @media (max-width: $sm-min) {
+        margin-bottom: 30px;
+      }
+      input{
+        padding: 11px 24px;
+        color: $black;
+        width: 540px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.07);
+        border-radius: 5px;
+        @media (max-width: $md-mid) {
+          width: 400px;
+        }
+        @media (max-width: $sm-min) {
+          width: 100%;
+        }
+      }
+      a{
+        position: absolute;
+        top: 10px;
+        right: 24px;
+        transition: all .3s ease;
+        &:hover{
+          transform: scale(1.2);
+          transition: all .3s ease;
+        }
+      }
+    }
+    &_menu{
+      @include flex(flex-start, space-between);
+
+      @media (max-width: $sm-min) {
+        flex-direction: column;
+        @include flex(flex-start);
+        margin-left: 30px;
+      }
+    }
+    &_items{
+      @media (max-width: $sm-min) {
+        :not(:last-child){
+          margin-right: 20px;
+        }
+      }
+      h4{
+        margin-bottom: 27px;
+      }
+      a{
+        display: block;
+        margin-bottom: 21px;
+        transition: all .2s ease;
+        &:hover{
+          transform: scale(1.05);
+          transition: all .2s ease;
+        }
+      }
+    }
+  }
+
+  &__underground{
+    background: $footer;
+    padding: 35px 0;
+    @include flex(center, center);
+
+    @media (max-width: $sm-min) {
+      text-align: center;
+    }
+  }
+}
